@@ -65,7 +65,7 @@ The codebase structure used in this project is detailed below.
 
 - [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) : Used to simulate network requests to reduce the chances of errors in integration phase
 - [MUI](mui.com): To develop a consistent UI.
-
+- [Tailwind](https://tailwindcss.com/): For responsiveness and layouts. 
 
 
 ## Available Scripts
