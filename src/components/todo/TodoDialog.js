@@ -1,23 +1,23 @@
 import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import {
-  TextField,
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  FormControl,
   Icon,
+  Dialog,
+  Button,
+  AppBar,
+  Toolbar,
+  Divider,
+  Checkbox,
+  TextField,
   IconButton,
   Typography,
-  Toolbar,
-  AppBar,
-  Checkbox,
-  Divider,
+  FormControl,
+  DialogActions,
+  DialogContent,
+  FormControlLabel,
 } from '@mui/material';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import { v4 as uuidv4 } from 'uuid';
 import useForm from './../../containers/forms';
-import { useDispatch, useSelector } from 'react-redux';
 import * as Actions from './store/actions';
 
 const defaultFormState = {
@@ -175,16 +175,29 @@ function TodoDialog(props) {
           >
             Save
           </Button>
-          <IconButton
-            className="min-w-auto"
-            onClick={() => {
-              dispatch(Actions.removeTodo(form.id));
-              closeTodoDialog();
-            }}
-            size="large"
-          >
-            <Icon>delete</Icon>
-          </IconButton>
+          {form.deleted ? (
+            <IconButton
+              className="min-w-auto"
+              onClick={() => {
+                dispatch(Actions.undoTodoRemoval(form.id));
+                closeTodoDialog();
+              }}
+              size="large"
+            >
+              <Icon color="primary">undo</Icon>
+            </IconButton>
+          ) : (
+            <IconButton
+              className="min-w-auto"
+              onClick={() => {
+                dispatch(Actions.removeTodo(form.id));
+                closeTodoDialog();
+              }}
+              size="large"
+            >
+              <Icon color="error">delete</Icon>
+            </IconButton>
+          )}
         </DialogActions>
       )}
     </Dialog>

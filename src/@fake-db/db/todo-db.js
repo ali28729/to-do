@@ -77,4 +77,15 @@ mock.onPost('/api/todo-app/remove-todo').reply((request) => {
   return [200, todoId];
 });
 
+mock.onPost('/api/todo-app/undo-todo-removal').reply((request) => {
+  const todoId = request.data;
+  todoDB.todos = todoDB.todos.map((_todo) => {
+    if (_todo.id === todoId) {
+      _todo.deleted = false;
+    }
+    return _todo;
+  });
+  return [200, todoId];
+});
+
 mock.onGet('/api/todo-app/filters').reply(200, todoDB.filters);

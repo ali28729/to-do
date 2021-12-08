@@ -21,12 +21,12 @@ function TodoSearch(props) {
           placeholder="Search the To-Dos"
           className="pl-16"
           disableUnderline
-          fullWidth
           value={searchText}
           inputProps={{
             'aria-label': 'Search the To-Dos',
           }}
           onChange={(ev) => dispatch(Actions.setSearchText(ev))}
+          fullWidth
         />
       </Paper>
     </div>
