@@ -6,24 +6,34 @@
     "@craco/craco": "^6.4.2",
     "@emotion/react": "^11.7.0",
     "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.1",
     "@mui/material": "^5.2.3",
+    "@mui/styles": "^5.2.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.24.0",
+    "axios-mock-adapter": "^1.20.0",
+    "clsx": "^1.1.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "lodash": "^4.17.21",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "redux-thunk": "^2.4.1",
+    "serve": "^13.0.2",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start && postcss src/index.css -o public/index.css",
+    "start": "craco start && postcss src/styles/app.css -o public/index.css",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx}'"
-
   },
   "eslintConfig": {
     "extends": [

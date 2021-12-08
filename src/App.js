@@ -1,8 +1,17 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
+import Provider from 'react-redux/es/components/Provider';
+import CssBaseline from '@mui/material/CssBaseline';
+import TodoApp from './components/todo/TodoApp';
+import store from './store';
+import '@fake-db';
 
 function App() {
-  return <Button variant="contained">Hello World</Button>;
+  return (
+    <Provider store={store}>
+      <CssBaseline />
+      <TodoApp />
+    </Provider>
+  );
 }
 
 export default App;

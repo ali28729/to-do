@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# To-Do App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+</section>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="docs-section">
+
+## Folder & File Structure
+
+<div class="adocs-section-content ng-binding">
+
+The codebase structure used in this project is detailed below.
+
+- <span class="f-path">node_modules/</span>
+
+  All the dependency and third party libraries are placed in this folder.
+
+- <span class="f-path">public/</span>
+
+  This folder basically keeps the public assets.
+
+
+- <span class="f-path">src/</span>
+  This folder contains all the code for the app.
+
+    - <span class="f-path">@fake-db/</span>
+
+      This folder keeps the fake-db code which is used to mock network requests.
+
+    - <span class="f-path">containers/</span>
+
+      Here is the components/ folder where we place common components used throughout the app. So, if you want to create a component which you want to reuse throughout the app, you should place that component here. 
+
+    - <span class="f-path">components/</span>
+
+      components/ folder contains the code for the actual app, it contains functional component which use various dependencies throughout the app to actually deliver the UI/UX.
+
+		- <span class="f-path">[folder-name]/store/</span>
+		
+			Each subfolder here is another independent module within the app with it's own redux store files. Actions and reducers for the specific modules are defined here.
+
+    - <span class="f-path">store/</span>
+
+     	Store folder contains all the redux configuration files and a demo action/reducer file to demonstrate how the state at macro level app will be manager whereas each module will have their own place for maintaining redux files.
+
+
+- <span class="f-path">.prettierrc.json</span>
+
+  Keeps the prettier formatting config files to have a consistent dev. experience in a team.
+
+
+</div>
+
+</section>
+
+## Technologies Used
+
+- [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) : Used to simulate network requests to reduce the chances of errors in integration phase
+- [MUI](mui.com): To develop a consistent UI.
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
