@@ -29,7 +29,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start && postcss src/styles/app.css -o public/index.css",
+    "start": "serve -s build",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
