@@ -30,13 +30,9 @@ function TodoListItem(props) {
 
   return (
     <ListItem
-      className={clsx(
-        classes.todoItem,
-        {
-          completed: props.todo.completed,
-        },
-        'w-full',
-      )}
+      className={clsx(classes.todoItem, {
+        completed: props.todo.completed,
+      })}
       onClick={(ev) => {
         dispatch(Actions.openEditTodoDialog(props.todo));
       }}

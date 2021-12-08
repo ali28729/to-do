@@ -124,7 +124,7 @@ function TodoApp(props) {
             }}
             open
           >
-            <TodoSidebarContent />
+            <TodoSidebarContent onDrawerToggle={handleDrawerToggle} />
           </Drawer>
         </Box>
         <Box
