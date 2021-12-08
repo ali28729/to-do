@@ -1,7 +1,7 @@
 # To-Do App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-The App is a simple To-Do list management interface where a title and text can be saved aganist a note. Notes can be marked as completed or deleted. The deletions can also be undone. A filter drawer is also available to filter out the to-do list along with a search functions which searches through both the title and text.
+The App is a simple To-Do list management interface where a title and text(optional) can be saved aganist a note. Notes can be marked as completed or deleted. The deletions can also be undone. A filter drawer is also available to filter out the to-do list along with a search functions which searches through both the title and text.
 
 ## Technologies Used
 
@@ -59,7 +59,7 @@ The codebase structure used in this project is detailed below.
 
     - <span class="f-path">store/</span>
 
-     	Store folder contains all the redux configuration files and a demo action/reducer file to demonstrate how the state at macro level app will be managed whereas each module will have their own directory for maintaining redux files.
+     	Store folder contains all the redux configuration files and a demo action/reducer file to demonstrate how the state at macro level of the app will be managed whereas each module will have their own directory for maintaining redux files.
 
 
 - <span class="f-path">.prettierrc.json</span>
