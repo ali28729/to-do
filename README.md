@@ -6,7 +6,7 @@ The App is a simple To-Do list management interface where a title and text(optio
 ## Technologies Used
 
 - [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) : Used to simulate network requests to reduce the chances of errors in integration phase.
-- [MUI](mui.com): To develop a consistent UI.
+- [MUI](https://mui.com/): To develop a consistent UI.
 - [Tailwind](https://tailwindcss.com/): For responsiveness and layouts.
 - [Redux](https://redux.js.org/): For state management in the app.
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk): For handling side effects with redux.
