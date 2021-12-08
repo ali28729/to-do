@@ -13,6 +13,8 @@ import _ from 'lodash';
 import * as Actions from './store/actions';
 
 const useStyles = makeStyles({
+  title: { display: 'inline', wordBreak: 'break-word' },
+  notes: { display: 'inline', wordBreak: 'break-word' },
   todoItem: {
     '&.completed': {
       background: 'rgba(0,0,0,0.03)',
@@ -53,28 +55,24 @@ function TodoListItem(props) {
         primary={
           <React.Fragment>
             <Typography
-              sx={{ display: 'inline' }}
               component="span"
-              className="todo-title"
+              className={clsx(classes.title, 'todo-title')}
             >
-              {props.todo.title}
+              {_.truncate(props.todo.title, { length: 170 })}
             </Typography>
           </React.Fragment>
         }
         secondary={
           <React.Fragment>
             <Typography
-              sx={{ display: 'inline' }}
               component="span"
               variant="body2"
               color="textSecondary"
-              className="todo-notes "
+              className={clsx(classes.notes, 'todo-notes')}
             >
               {_.truncate(
                 props.todo.notes.replace(/<(?:.|\n)*?>/gm, ''),
-                {
-                  length: 180,
-                },
+                { length: 500 },
               )}
             </Typography>
           </React.Fragment>
