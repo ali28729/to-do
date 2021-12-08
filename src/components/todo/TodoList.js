@@ -21,10 +21,15 @@ function TodoList(props) {
     function getFilteredArray(entities, searchText) {
       const arr = Object.keys(entities).map((id) => entities[id]);
       if (searchText.length === 0) return arr;
-
       return _.filter(
         arr,
-        (obj) => obj.notes.indexOf(searchText) !== -1,
+        (obj) =>
+          obj.notes
+            .toLowerCase()
+            .indexOf(searchText.toLowerCase()) !== -1 ||
+          obj.title
+            .toLowerCase()
+            .indexOf(searchText.toLowerCase()) !== -1,
       );
     }
 

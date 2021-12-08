@@ -6,6 +6,7 @@ export const TOGGLE_COMPLETED = '[TODO APP] TOGGLE COMPLETED';
 export const UPDATE_TODO = '[TODO APP] UPDATE TODO';
 export const ADD_TODO = '[TODO APP] ADD TODO';
 export const REMOVE_TODO = '[TODO APP] REMOVE TODO';
+export const UNDO_TODO_REMOVAL = '[TODO APP] UNDO TODO REMOVAL';
 export const SET_SEARCH_TEXT = '[TODO APP] SET SEARCH TEXT';
 export const OPEN_NEW_TODO_DIALOG = '[TODO APP] OPEN NEW TODO DIALOG';
 export const CLOSE_NEW_TODO_DIALOG =
@@ -123,10 +124,26 @@ export function removeTodo(todoId) {
     );
 }
 
+export function undoTodoRemoval(todoId) {
+  const request = axios.post(
+    '/api/todo-app/undo-todo-removal',
+    todoId,
+  );
+
+  return (dispatch) =>
+    request.then((response) =>
+      Promise.all([
+        dispatch({
+          type: UNDO_TODO_REMOVAL,
+        }),
+      ]).then(() => dispatch(updateTodos())),
+    );
+}
+
 export function setSearchText(event) {
   return {
     type: SET_SEARCH_TEXT,
-    searchText: event.target.value.toLowerCase(),
+    searchText: event.target.value,
   };
 }
 

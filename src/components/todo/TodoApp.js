@@ -56,9 +56,7 @@ function TodoApp(props) {
     dispatch(Actions.getTodos('all'));
   }, [dispatch]);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -113,7 +111,7 @@ function TodoApp(props) {
               },
             }}
           >
-            <TodoSidebarContent />
+            <TodoSidebarContent onDrawerToggle={handleDrawerToggle} />
           </Drawer>
           <Drawer
             variant="permanent"
@@ -126,7 +124,7 @@ function TodoApp(props) {
             }}
             open
           >
-            <TodoSidebarContent />
+            <TodoSidebarContent onDrawerToggle={handleDrawerToggle} />
           </Drawer>
         </Box>
         <Box

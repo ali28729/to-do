@@ -1,6 +1,16 @@
 # To-Do App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The App is a simple To-Do list management interface where a title and text can be saved aganist a note. Notes can be marked as completed or deleted. The deletions can also be undone. A filter drawer is also available to filter out the to-do list along with a search functions which searches through both the title and text.
+
+## Technologies Used
+
+- [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) : Used to simulate network requests to reduce the chances of errors in integration phase.
+- [MUI](mui.com): To develop a consistent UI.
+- [Tailwind](https://tailwindcss.com/): For responsiveness and layouts.
+- [Redux](https://redux.js.org/): For state management in the app.
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk): For handling side effects with redux.
+
 
 </section>
 
@@ -37,7 +47,7 @@ The codebase structure used in this project is detailed below.
 
     - <span class="f-path">containers/</span>
 
-      Here is the components/ folder where we place common components used throughout the app. So, if you want to create a component which you want to reuse throughout the app, you should place that component here. 
+      Here is the components/ folder where common components used throughout the app are placed. 
 
     - <span class="f-path">components/</span>
 
@@ -49,23 +59,17 @@ The codebase structure used in this project is detailed below.
 
     - <span class="f-path">store/</span>
 
-     	Store folder contains all the redux configuration files and a demo action/reducer file to demonstrate how the state at macro level app will be manager whereas each module will have their own place for maintaining redux files.
+     	Store folder contains all the redux configuration files and a demo action/reducer file to demonstrate how the state at macro level app will be managed whereas each module will have their own directory for maintaining redux files.
 
 
 - <span class="f-path">.prettierrc.json</span>
 
-  Keeps the prettier formatting config files to have a consistent dev. experience in a team.
+  Keeps the prettier formatting config files to have a seamless dev. experience in a team.
 
 
 </div>
 
 </section>
-
-## Technologies Used
-
-- [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) : Used to simulate network requests to reduce the chances of errors in integration phase
-- [MUI](mui.com): To develop a consistent UI.
-- [Tailwind](https://tailwindcss.com/): For responsiveness and layouts. 
 
 
 ## Available Scripts

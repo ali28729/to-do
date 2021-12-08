@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 import * as Actions from './store/actions';
 
-function TodoSidebarContent(props) {
+function TodoSidebarContent({ onDrawerToggle }) {
   const dispatch = useDispatch();
   const filters = useSelector(({ todoApp }) => todoApp.filters);
   const { selectedFilter } = useSelector(
@@ -38,9 +38,10 @@ function TodoSidebarContent(props) {
         <ListSubheader disableSticky>FILTERS</ListSubheader>
         <ListItem
           selected={selectedFilter === 'all' ? true : false}
-          onClick={() =>
-            dispatch(Actions.updateSelectedFilter('all'))
-          }
+          onClick={() => {
+            dispatch(Actions.updateSelectedFilter('all'));
+            onDrawerToggle();
+          }}
           button
           key="all"
         >
@@ -56,9 +57,10 @@ function TodoSidebarContent(props) {
         {filters.map((filter) => (
           <ListItem
             selected={filter.handle === selectedFilter ? true : false}
-            onClick={() =>
-              dispatch(Actions.updateSelectedFilter(filter.handle))
-            }
+            onClick={() => {
+              dispatch(Actions.updateSelectedFilter(filter.handle));
+              onDrawerToggle();
+            }}
             button
             key={filter.id}
           >
